@@ -2,79 +2,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nested Tables</title>
+    <title>Tables in Tables</title>
     <style>
         table, th, td {
-            border: 1px solid black;
+            border: 2px solid black;
             border-collapse: collapse;
-            padding: 8px;
+            padding: 6px;
+            text-align: center;
         }
-        .black-cell {
+        .main {
+            width: 100%;
+        }
+        .nested {
+            width: 100%;
+        }
+        .black {
             background-color: black;
             color: white;
+            font-weight: bold;
+        }
+        a {
+            color: purple;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<table>
+<table class="main">
     <tr>
+        <!-- Top Left: Nested Table 2 -->
         <td>
-            <!-- Nested Table 1 -->
-            <table>
+            <table class="nested">
                 <tr>
-                    <th>Nested Table 1</th>
+                    <th colspan="2">Nested Table 2</th>
                 </tr>
                 <tr>
-                    <td>Row 1</td>
-                </tr>
-            </table>
-        </td>
-
-        <td>
-            <!-- Nested Table 2 -->
-            <table>
-                <tr>
-                    <th>Nested Table 2</th>
                     <th>Column 1</th>
                     <th>Column 2</th>
                 </tr>
                 <tr>
-                    <td>Row 1</td>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
+                    <td>abc</td>
+                    <td>def</td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Top Right: Nested Table 1 -->
+        <td>
+            <table class="nested">
+                <tr>
+                    <th>Nested Table 1</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul style="text-align:left;">
+                            <li>List item</li>
+                            <li>List item</li>
+                            <li>List item</li>
+                        </ul>
+                    </td>
                 </tr>
             </table>
         </td>
     </tr>
 
     <tr>
+        <!-- Bottom Left: Nested Table 3 -->
         <td>
-            <!-- Nested Table 3 with List -->
-            <table>
+            <table class="nested">
                 <tr>
-                    <th>Nested Table 3</th>
+                    <th colspan="2">Nested Table 3</th>
                 </tr>
                 <tr>
                     <td>
-                        <ul>
-                            <li>List item 1</li>
-                            <li>List item 2</li>
-                            <li>List item 3</li>
-                        </ul>
+                        <a href="#">Nested Table</a>
                     </td>
+                    <td>Demo Continued</td>
                 </tr>
             </table>
         </td>
 
+        <!-- Bottom Right: Nested Table 4 -->
         <td>
-            <!-- Nested Table 4 with black cell -->
-            <table>
+            <table class="nested">
                 <tr>
                     <th>Nested Table 4</th>
                 </tr>
                 <tr>
-                    <td class="black-cell">HTML</td>
+                    <td class="black">HTML</td>
                 </tr>
             </table>
         </td>
